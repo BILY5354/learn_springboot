@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db
+    username: root
+    password: 123456
+
+
+#url: jdbc:mysql://192.168.23.129:3306/ssm_db?useSSL=false
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_

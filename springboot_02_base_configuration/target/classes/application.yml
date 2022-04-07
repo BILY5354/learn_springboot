@@ -10,3 +10,9 @@ users:
   -
     name: lisi
     age: 17
+
+datasource:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/springboot_db
+  username: root
+  password: root666
