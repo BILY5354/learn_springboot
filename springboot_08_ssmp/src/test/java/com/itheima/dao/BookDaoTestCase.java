@@ -1,5 +1,9 @@
 package com.itheima.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +53,28 @@ public class BookDaoTestCase {
     @Test
     void testGetAll() {
         System.out.println(bookDao.selectList(null));
+    }
+
+    @Test
+    void testGetPage() {
+        IPage page = new Page(1, 5);
+        bookDao.selectPage(page, null);
+    }
+
+    @Test
+    void testGetBy() {
+        QueryWrapper<Book> qw = new QueryWrapper<>();
+        qw.like("name", "Spring");//查询有spring的字段书名
+        bookDao.selectList(qw);
+    }
+
+    @Test
+    void testGetBy2() {
+        String name = null;
+        //与testGetBy一样，但是可以避免写字段错误
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        //判断的字段不能为空
+        lqw.like(name != null, Book::getName, name);
+        bookDao.selectList(lqw);
     }
 }
