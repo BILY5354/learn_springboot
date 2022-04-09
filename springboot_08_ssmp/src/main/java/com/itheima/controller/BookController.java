@@ -29,7 +29,8 @@ public class BookController {
     @PostMapping
     public R save(@RequestBody Book book) {
 
-        return new R(bookService.save(book));
+        boolean flag = bookService.save(book);
+        return new R(flag, flag ? "添加成功^-^" : "添加失败-_-!");
     }
 
     @PutMapping
