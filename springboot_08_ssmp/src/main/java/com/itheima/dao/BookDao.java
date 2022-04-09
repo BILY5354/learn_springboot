@@ -5,12 +5,14 @@ import com.fasterxml.jackson.databind.ser.Serializers;
 import com.itheima.domain.Book;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author CDUY
  * @version 1.0
  */
 @Mapper
+@Repository
 public interface BookDao extends BaseMapper<Book> {
 
    /* mybatis的写法 但是mp无需
