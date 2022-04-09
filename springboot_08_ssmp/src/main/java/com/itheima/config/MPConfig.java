@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 加载第三方bean的方式，是分页成为可能
  * @author CDUY
  * @version 1.0
  */
-//加载第三方bean的方式
 @Configuration
 public class MPConfig {
     @Bean

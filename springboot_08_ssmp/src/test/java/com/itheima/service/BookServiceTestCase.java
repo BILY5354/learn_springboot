@@ -37,16 +37,16 @@ public class BookServiceTestCase {
     @Test
     void testUpdate() {
         Book book = new Book();
-        book.setId(12);
-        book.setType("测试更新类型");
-        book.setName("测试更新书名");
-        book.setDescription("测试更新简介");
+        book.setId(13);
+        book.setType("计算机理论");
+        book.setName("Java技术");
+        book.setDescription("卷一卷二带你走向Java巅峰");
         bookService.update(book);
     }
 
     @Test
     void testDeleteById() {
-        bookService.delete(13);
+        bookService.delete(16);
     }
 
     @Test
@@ -56,7 +56,8 @@ public class BookServiceTestCase {
 
     @Test
     void testGetPage() {
-        IPage<Book> page = bookService.getPage(1, 5);
+        IPage<Book> page = bookService.getPage(1, 3);
+        System.out.println(page);
     }
 
 }
